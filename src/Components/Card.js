@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Card = ({ name, click, id, flippedCards, visibal }) => {
+const Card = ({ name, click, id, flippedCards, visibal, photo }) => {
   const [see, setsee] = useState(false);
   let idp = id;
 
@@ -20,8 +20,8 @@ const Card = ({ name, click, id, flippedCards, visibal }) => {
   return (
     <>
       <button
-        className={`lg:w-[180px] lg:h-[180px] w-[72px] h-[72px] p-2 bg-slate-500 m-2 rounded flex justify-center items-center  ${id} ${
-          visibal === true ? "bg-green-900" : ""
+        className={`lg:w-[180px] lg:h-[180px] w-[72px] h-[72px] p-2  m-2 rounded flex justify-center items-center   ${
+          visibal == true ? "bg-green-900" : "bg-slate-500"
         }`}
         disabled={visibal === true ? true : false}
         onClick={() => {
@@ -29,7 +29,7 @@ const Card = ({ name, click, id, flippedCards, visibal }) => {
           console.log(id, name);
         }}
       >
-        {see || visibal ? name : ""}
+        {see || visibal ? <img alt={name} loading="lazy" src={photo} /> : ""}
       </button>
     </>
   );

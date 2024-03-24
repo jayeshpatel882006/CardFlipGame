@@ -4,22 +4,118 @@ import "../index.css";
 
 const CardContainer = () => {
   const cardsData = [
-    { index: 16, value: "H", visibal: false },
-    { index: 2, value: "B", visibal: false },
-    { index: 3, value: "C", visibal: false },
-    { index: 4, value: "D", visibal: false },
-    { index: 5, value: "E", visibal: false },
-    { index: 6, value: "F", visibal: false },
-    { index: 7, value: "G", visibal: false },
-    { index: 8, value: "H", visibal: false },
-    { index: 9, value: "A", visibal: false },
-    { index: 10, value: "B", visibal: false },
-    { index: 11, value: "C", visibal: false },
-    { index: 12, value: "D", visibal: false },
-    { index: 13, value: "E", visibal: false },
-    { index: 14, value: "F", visibal: false },
-    { index: 15, value: "G", visibal: false },
-    { index: 1, value: "A", visibal: false },
+    {
+      index: 16,
+      value: "H",
+      visibal: false,
+      photo:
+        "https://seeklogo.com/images/P/python-logo-A32636CAA3-seeklogo.com.png",
+    },
+    {
+      index: 2,
+      value: "B",
+      visibal: false,
+      photo:
+        "https://seeklogo.com/images/J/javascript-js-logo-2949701702-seeklogo.com.png",
+    },
+    {
+      index: 3,
+      value: "C",
+      visibal: false,
+      photo:
+        "https://seeklogo.com/images/J/java-logo-7F8B35BAB3-seeklogo.com.png",
+    },
+    {
+      index: 4,
+      value: "D",
+      visibal: false,
+      photo:
+        "https://seeklogo.com/images/K/kotlin-logo-30C1970B05-seeklogo.com.png",
+    },
+    {
+      index: 5,
+      value: "E",
+      visibal: false,
+      photo:
+        "https://seeklogo.com/images/P/php-logo-DC4A01DBB6-seeklogo.com.png",
+    },
+    {
+      index: 6,
+      value: "F",
+      visibal: false,
+      photo:
+        "https://seeklogo.com/images/S/swift-logo-7927855EB5-seeklogo.com.png",
+    },
+    {
+      index: 7,
+      value: "G",
+      visibal: false,
+      photo:
+        "https://seeklogo.com/images/G/go-language-logo-1EEF01C7CF-seeklogo.com.png",
+    },
+    {
+      index: 8,
+      value: "H",
+      visibal: false,
+      photo:
+        "https://seeklogo.com/images/P/python-logo-A32636CAA3-seeklogo.com.png",
+    },
+    {
+      index: 9,
+      value: "A",
+      visibal: false,
+      photo:
+        "https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg",
+    },
+    {
+      index: 10,
+      value: "B",
+      visibal: false,
+      photo:
+        "https://seeklogo.com/images/J/javascript-js-logo-2949701702-seeklogo.com.png",
+    },
+    {
+      index: 11,
+      value: "C",
+      visibal: false,
+      photo:
+        "https://seeklogo.com/images/J/java-logo-7F8B35BAB3-seeklogo.com.png",
+    },
+    {
+      index: 12,
+      value: "D",
+      visibal: false,
+      photo:
+        "https://seeklogo.com/images/K/kotlin-logo-30C1970B05-seeklogo.com.png",
+    },
+    {
+      index: 13,
+      value: "E",
+      visibal: false,
+      photo:
+        "https://seeklogo.com/images/P/php-logo-DC4A01DBB6-seeklogo.com.png",
+    },
+    {
+      index: 14,
+      value: "F",
+      visibal: false,
+      photo:
+        "https://seeklogo.com/images/S/swift-logo-7927855EB5-seeklogo.com.png",
+    },
+    {
+      index: 15,
+      value: "G",
+      visibal: false,
+      photo:
+        "https://seeklogo.com/images/G/go-language-logo-1EEF01C7CF-seeklogo.com.png",
+    },
+    {
+      index: 1,
+      value: "A",
+      visibal: false,
+      photo:
+        "https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg",
+    },
   ];
   const shuffle = (array) => {
     for (let i = array?.length - 1; i > 0; i--) {
@@ -77,7 +173,7 @@ const CardContainer = () => {
           setFlippedCards([]);
           setClick(0);
           setprevId("");
-        }, 1100);
+        }, 800);
 
         return () => clearTimeout(timeout);
       }
@@ -136,6 +232,7 @@ const CardContainer = () => {
                 id={item.index}
                 flippedCards={flippedCards}
                 visibal={item.visibal}
+                photo={item.photo}
               />
             ))}
           </div>
