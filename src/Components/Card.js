@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const Card = ({ name, click, id, flippedCards, visibal, photo }) => {
   const [see, setsee] = useState(false);
@@ -19,7 +20,8 @@ const Card = ({ name, click, id, flippedCards, visibal, photo }) => {
 
   return (
     <>
-      <button
+      <motion.button
+        whileTap={{ scale: 0.9, rotate: 360 }}
         className={`lg:w-[180px] lg:h-[180px] w-[72px] h-[72px] p-2  m-2 rounded flex justify-center items-center   ${
           visibal == true ? "bg-green-900" : "bg-slate-500"
         }`}
@@ -30,7 +32,7 @@ const Card = ({ name, click, id, flippedCards, visibal, photo }) => {
         }}
       >
         {see || visibal ? <img alt={name} loading="lazy" src={photo} /> : ""}
-      </button>
+      </motion.button>
     </>
   );
 };

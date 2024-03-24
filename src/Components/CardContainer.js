@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import "../index.css";
+import { motion } from "framer-motion";
 
 const CardContainer = () => {
   const cardsData = [
@@ -209,8 +210,13 @@ const CardContainer = () => {
       <h2 className="text-center font-semibold py-2">Card Flip Game</h2>
 
       {chekSuccess() ? (
-        <div className="flex  justify-center items-center m-5">
-          <h1 className="text-center font-bold lg:text-7xl text-5xl ">
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex flex-col  justify-center items-center m-5"
+        >
+          <h1 className="text-center text-green-700 font-bold lg:text-7xl text-5xl ">
             ! Winner !
           </h1>
           <button
@@ -219,7 +225,7 @@ const CardContainer = () => {
           >
             Reset
           </button>
-        </div>
+        </motion.div>
       ) : (
         <div className="flex gap-2 lg:flex-row flex-col justify-center items-center">
           <div className="rounded border-inherit border-2 flex lg:w-[42%] w-[90%] flex-wrap justify-center justify-items-stretch ">
